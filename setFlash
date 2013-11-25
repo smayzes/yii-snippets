@@ -1,0 +1,5 @@
+Yii::app()->user->setFlash('key',Yii::t('Flash Message'));
+
+if ( Yii::app()->user->hasFlash('key') ) {
+	echo Yii::app()->user->getFlash('key');
+}
