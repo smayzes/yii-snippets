@@ -1,0 +1,18 @@
+/**
+ * @return array relational rules.
+ */
+public function relations()
+{
+	return array(
+	//  Belongs to
+		'name' => array(self::BELONGS_TO, 'Model', 'foriegn_key'),
+	//  Has many
+		'name' => array(self::HAS_MANY, 'Model', 'foriegn_key'),
+	//  Has one
+		'name' => array(self::HAS_ONE, 'Model', 'foriegn_key'),
+
+		'name' => array(self::HAS_MANY, 'Model', 'foriegn_key', 'condition'=>'key=:value', 'params'=>array(':value'=>'value')),
+
+	);
+}
+

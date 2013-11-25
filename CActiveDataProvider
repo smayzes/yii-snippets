@@ -1,0 +1,10 @@
+$dataProvider = new CActiveDataProvider('Model', array(
+  'criteria' => array(
+		'condition' => '',
+		'order' => '',
+		'with' => array('')
+	),
+	'pagination' => array(
+		'pageSize'=>10,
+	),
+));

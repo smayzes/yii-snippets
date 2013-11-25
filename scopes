@@ -1,0 +1,7 @@
+public function defaultScope() {
+    return array(
+        'alias'=>'Alias',
+        'condition'=>'Alias.key = :value',
+        'params'=>array(':value'=>$value),
+    );
+}
