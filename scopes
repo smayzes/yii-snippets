@@ -1,7 +1,46 @@
+/**
+ * defaultScope function.
+ *
+ * @access public
+ * @return void
+ */
 public function defaultScope() {
     return array(
         'alias'=>'Alias',
         'condition'=>'Alias.key = :value',
         'params'=>array(':value'=>$value),
     );
+}
+
+/**
+ * scopes function.
+ *
+ * @access public
+ * @return void
+ */
+public function scopes() {
+    return array(
+        'name'=>array(
+            'condition'=>'key=:value',
+            'params'=>array(':key'=>'value'),
+        ),
+    );
+}
+
+
+/**
+ * scope_method function.
+ *
+ * @access public
+ * @param mixed $key (default: null)
+ * @return void
+ */
+public function scope_method($key = null) {
+	if ( !empty($key) ) {
+	    $this->getDbCriteria()->mergeWith(array(
+	        'condition'=>'key=:value',
+	        'params'=>array(':value'=>$key),
+	    ));
+	}
+    return $this;
 }
