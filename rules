@@ -1,0 +1,27 @@
+/**
+ * @return array validation rules for model attributes.
+ */
+public function rules() {
+    return array(
+    //  Rules with custom attribute method contained inside class
+       array('attribute', 'ext.CValidators.className', 'param'=>'value'),
+    //  Date Comparison
+    	array('date_one','compare','compareAttribute'=>'date_two','operator'=>'>','message'=>Yii::t('app', 'Error message.')),
+    );
+}
+
+
+/**
+ * className class.
+ *
+ * @extends CValidator
+ */
+class className extends CValidator {
+
+    public $param;
+
+	protected function validateAttribute($object,$attribute) {
+		...
+		$this->addError($object,$attribute,Yii::t('app', 'Error message.');
+	}
+}
