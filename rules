@@ -7,6 +7,14 @@ public function rules() {
        array('attribute', 'ext.CValidators.className', 'param'=>'value'),
     //  Date Comparison
     	array('date_one','compare','compareAttribute'=>'date_two','operator'=>'>','message'=>Yii::t('app', 'Error message.')),
+    //  Value Comparison
+		array('min_attribute', 'compare', 'compareAttribute'=>'max_attribute', 'operator'=>'<=',  'allowEmpty'=>false, 'message'=>Yii::t('app', 'Error Message')),
+    //  Minimum value
+        array('attribute', 'numerical', 'integerOnly'=>true, 'min'=>1, 'allowEmpty'=>true),
+    //  Maximum value
+        array('attribute', 'numerical', 'integerOnly'=>true, 'max'=>10, 'allowEmpty'=>true),
+	//  Default Value when Empty
+        array('attribute', 'default', 'setOnEmpty' => true, 'value' => 'value'),
     );
 }
 
