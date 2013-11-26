@@ -1,0 +1,10 @@
+$form = $this->beginWidget('CActiveForm', array(
+	'id'=>'login-form',
+	'enableClientValidation'=>false,
+	'clientOptions'=>array(
+		'validateOnSubmit'=>true,
+	),
+	'focus'=>array($model, 'first_input')
+));
+
+$this->endWidget();
