@@ -1,4 +1,4 @@
-echo CHtml::ajax(array(
+echo CHtml::script(CHtml::ajax(array(
 	'dataType' => 'text',
 	'data' => $data,
     'url' => Yii::app()->createUrl('ajax/url'),
@@ -15,4 +15,4 @@ echo CHtml::ajax(array(
     'error' => 'function(jqXHR, textStatus, errorThrown) {
         console.log(textStatus);
     }',
-));
+)));
