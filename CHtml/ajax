@@ -1,18 +1,79 @@
-echo CHtml::script(CHtml::ajax(array(
-	'dataType' => 'text',
-	'data' => $data,
-    'url' => Yii::app()->createUrl('ajax/url'),
-    'type' => 'post',
-    'success' => 'function(result) {
-        console.log(result);
-    }',
-    'complete' => 'function(jqXHR, textStatus) {
-        console.log(textStatus);
-    }',
-    'beforeSend' => 'function(jqXHR, textStatus) {
-        console.log(textStatus);
-    }',
-    'error' => 'function(jqXHR, textStatus, errorThrown) {
-        console.log(textStatus);
-    }',
-)));
+//  Generates the JavaScript that initiates an AJAX request.
+	echo CHtml::script(CHtml::ajax(array(
+		'dataType' => 'text',
+		'data' => $data,
+	    'url' => Yii::app()->createUrl('/ajax/url'),
+	    'type' => 'post',
+	    'success' => 'function(result) {
+	        console.log(result);
+	    }',
+	    'complete' => 'function(jqXHR, textStatus) {
+	        console.log(textStatus);
+	    }',
+	    'beforeSend' => 'function(jqXHR, textStatus) {
+	        console.log(textStatus);
+	    }',
+	    'error' => 'function(jqXHR, textStatus, errorThrown) {
+	        console.log(textStatus);
+	    }',
+	)));
+
+//  Generates a push button that can initiate AJAX requests.
+	echo CHtml::script(CHtml::ajaxButton('Button Title', Yii::app()->createUrl('/ajax/url'), array(
+		'dataType' => 'text',
+		'data' => $data,
+	    'url' => Yii::app()->createUrl('/ajax/url'),
+	    'type' => 'post',
+	    'success' => 'function(result) {
+	        console.log(result);
+	    }',
+	    'complete' => 'function(jqXHR, textStatus) {
+	        console.log(textStatus);
+	    }',
+	    'beforeSend' => 'function(jqXHR, textStatus) {
+	        console.log(textStatus);
+	    }',
+	    'error' => 'function(jqXHR, textStatus, errorThrown) {
+	        console.log(textStatus);
+	    }',
+	)));
+
+//  Generates a link that can initiate AJAX requests.
+	echo CHtml::script(CHtml::ajaxLink('Link Title', Yii::app()->createUrl('/ajax/url'), array(
+		'dataType' => 'text',
+		'data' => $data,
+	    'url' => Yii::app()->createUrl('/ajax/url'),
+	    'type' => 'post',
+	    'success' => 'function(result) {
+	        console.log(result);
+	    }',
+	    'complete' => 'function(jqXHR, textStatus) {
+	        console.log(textStatus);
+	    }',
+	    'beforeSend' => 'function(jqXHR, textStatus) {
+	        console.log(textStatus);
+	    }',
+	    'error' => 'function(jqXHR, textStatus, errorThrown) {
+	        console.log(textStatus);
+	    }',
+	)));
+
+//  Generates a push button that can submit the current form in POST method.
+	echo CHtml::script(CHtml::ajaxSubmitButton('Button Title', Yii::app()->createUrl('/ajax/url'), array(
+		'dataType' => 'text',
+		'data' => $data,
+	    'url' => Yii::app()->createUrl('/ajax/url'),
+	    'type' => 'post',
+	    'success' => 'function(result) {
+	        console.log(result);
+	    }',
+	    'complete' => 'function(jqXHR, textStatus) {
+	        console.log(textStatus);
+	    }',
+	    'beforeSend' => 'function(jqXHR, textStatus) {
+	        console.log(textStatus);
+	    }',
+	    'error' => 'function(jqXHR, textStatus, errorThrown) {
+	        console.log(textStatus);
+	    }',
+	)));
